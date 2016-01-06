@@ -1,0 +1,7 @@
+paintball BLUE 1 1 3
+cow bull 2 1
+paintball BLACK 3 1 3
+paintball PINK 4 1 4
+paintball special 10 10 1
+cow c1 9 10
+cow c2 11 10

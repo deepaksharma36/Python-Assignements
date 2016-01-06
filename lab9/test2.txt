@@ -1,0 +1,6 @@
+cow cow1 1 1
+cow cow2 4 4
+cow cow3 8 4
+paintball pt1 10 10 1
+paintball pt2 11 10 1
+paintball pt3 9 10 1

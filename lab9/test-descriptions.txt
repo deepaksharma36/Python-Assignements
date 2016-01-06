@@ -1,0 +1,32 @@
+test1
+    Part 1 run with empty text file
+    Part 2 run with only one Paintball
+    Part 3 run with only one Cow
+    Part 4 run program without argument
+    Part 5 run program with wrong argument(Non existing file)
+    Part 6 run program with float values
+    Note: Since the description of the assignment says its contents are guaranteed to all be valid, We should
+    not check the program for non numerical values.
+    Output will be similar to the example given in the assignment:
+    Results
+    Triggering the RED paint ball is the best choice with 4 total paint on the cow
+    Milka's colors: { 'RED' ,'GREEN' }
+    Daisy's colors: { 'RED' }
+    Fauntleroy's colors: {}
+    Babe's colors: { 'BLUE' }
+
+test2
+1. No cow is in the range on any paintball so no cow should be painted, else logical implementation of result
+    functionality is wrong.
+2. All Paintball should trigger each other. Check the implementation of the recursive method: triggering,
+
+test3
+1. As Assignment description says program should display "which starting paint ball color painted the cows the most".
+   in this test "special" paints two cows: c1 and c2. On the other hand, "bull" gets painted by 3 paints Blue Black Pink
+   Though special paintball paints maximum number of cows(2),Now result should be either Black Blue or Pink but
+   should not be special.
+2. Check boundary condition cows c1 c2 c3 has been placed on the far most possible points in the range of 'special'
+   hence the implementation of distance functionality is wrong.
+3. Paint ball Blue Black and Pink all are in range of each other hence It also test if two paint ball are connected to
+   each other then implementation of the recursion in trigger method should be correct else infinity loop may be
+   detected by this test case.
