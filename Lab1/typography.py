@@ -1,262 +1,263 @@
-__author__ = 'Deepak Sharma'
-"""
-CSCI-603: Intro Lecture (week 1)
-Author: Deepak Sharma (sps@cs.rit.edu)
+__author__ = 'MAYANK'
 
-This program  draws few English language Character for forming a word "COLDPAYS"
-"""
 import turtle
 import math
-WINDOW_WIDTH = 400
-WINDOW_HEIGHT = 400
+
+# global constants for window dimensions
+WINDOW_WIDTH = 600
+WINDOW_HEIGHT = 600
 
 def init():
     """
+    Initialize for drawing.
     :pre: pos (0,0), heading (east), up
-    :post: pos (-180,0), heading (east), up
+    :post: pos (0,0), heading (east), up
     :return: None
     """
-    turtle.up()
-    x_cor=-180
-    y_cor=0
-    turtle.setx(x_cor)
-    turtle.sety(y_cor)
-    print("Starting Position ("+str(x_cor)+","+str(y_cor)+")" )
-    turtle.setheading(0)
 
+    turtle.setworldcoordinates(-WINDOW_WIDTH/2, -WINDOW_WIDTH/2,
+        WINDOW_WIDTH/2, WINDOW_HEIGHT/2)
+    turtle.up()
+    turtle.setheading(0)
     turtle.title('Typography')
-    #turtle.speed(-2)
-def drawO(length):
+    turtle.speed(0)
+
+def space(n):
     """
-    Draw English character 'O'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
+    provides space between alphabets
+    """
+
+    turtle.forward(n)
+
+def drawM(length):
+    """
+    Draw M.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
     :return: None
     """
-    turtle.down()
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.up()
-def drawSpace(space_length_x,space_length_y):
-    """
-    Draw Space between characters
-    :pre: (relative) pos (X,X), heading (east), up
-    :post: (relative) pos (X+space_length_x,X+space_length_y), heading (east), up
-    :return: None
-    """
-    turtle.up()
-    if space_length_x>0:
-       turtle.forward(space_length_x)
-    elif space_length_x<0:
-        turtle.back(space_length_x)
-        turtle.right(180)
-    if space_length_y>0:
-        turtle.left(90)
-        turtle.forward(space_length_y)
-        turtle.right(90)
-    elif space_length_y<0:
-        turtle.right(90)
-        turtle.forward(space_length_y)
-        turtle.left(90)
-    turtle.up()
-def drawL(length):
-    """
-    Draw English character 'L'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
-    :return: None
-    """
-    turtle.down()
-    turtle.forward(length)
-    turtle.left(180)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.up()
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.up()
-def drawD(length):
-    """
-    Draw English character 'D'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
-    :return: None
-    """
-    turtle.down()
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(180)
-    turtle.forward(length/2)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length/2)
-    turtle.up()
-def drawP(length):
-    """
-    Draw English character 'P'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
-    :return: None
-    """
+
     turtle.down()
     turtle.left(90)
     turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length/2)
-    turtle.right(90)
+    turtle.right(135)
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.left(90)
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.right(135)
     turtle.forward(length)
     turtle.left(90)
-    turtle.forward(length/2)
-    turtle.left(90)
     turtle.up()
-    turtle.forward(length)
-    turtle.up()
+
 def drawA(length):
     """
-    Draw English character 'A'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
+    Draw A.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
     :return: None
     """
+
     turtle.down()
     turtle.left(90)
     turtle.forward(length)
     turtle.right(90)
     turtle.forward(length)
     turtle.right(90)
-    turtle.forward(length/2)
-    turtle.right(90)
     turtle.forward(length)
-    turtle.left(180)
-    turtle.forward(length)
+    turtle.up()
+    turtle.back(length/2)
     turtle.right(90)
+    turtle.down()
+    turtle.forward(length)
+    turtle.up()
+    turtle.back(length)
+    turtle.left(90)
     turtle.forward(length/2)
     turtle.left(90)
-    turtle.up()
+
 def drawY(length):
     """
-    Draw English character 'Y'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
+    Draw Y.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
     :return: None
     """
+
+    turtle.forward(length/2)
+    turtle.down()
+    turtle.left(90)
+    turtle.forward(length/2)
+    turtle.right(45)
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
     turtle.up()
+    turtle.back(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.left(90)
+    turtle.down()
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.up()
+    turtle.back(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.right(45)
+    turtle.back(length/2)
+    turtle.right(90)
+    turtle.forward(length/2)
+
+def drawN(length):
+    """
+    Draw N.
+    :pre: (relative) pos (0, 0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
+    :return: None
+    """
+
+    turtle.left(90)
+    turtle.down()
+    turtle.forward(length)
+    turtle.right(135)
+    turtle.forward(math.sqrt(pow(length,2) + pow(length,2)))
+    turtle.left(135)
+    turtle.forward(length)
+    turtle.up()
+    turtle.back(length)
+    turtle.right(90)
+
+def drawK(length):
+    """
+    Draw K.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
+    :return: None
+    """
+
+    turtle.down()
     turtle.left(90)
     turtle.forward(length)
-    turtle.right(90)
+    turtle.up()
+    turtle.back(length/2)
     turtle.down()
     turtle.right(45)
-    turtle.forward(math.sqrt((2*math.pow((length/2),2))))
-    #moving at 45 degree angle for length sqrt(((math.pow((length/2)+(math.pow((length/2)),2)))
-    # calculated using pythagorean theorem.
-    turtle.right(45)
-    turtle.forward(length/2)
-    turtle.right(180)
-    turtle.forward(length/2)
-    turtle.right(45)
-    turtle.forward(math.sqrt((2*math.pow((length/2),2))))
-    turtle.right(45)
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
     turtle.up()
+    turtle.back(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.right(90)
+    turtle.down()
+    turtle.forward(math.sqrt(pow(length/2,2) + pow(length/2,2)))
+    turtle.left(45)
+    turtle.up()
+
+def drawJ(length):
+    """
+    Draw J.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
+    :return: None
+    """
+    turtle.down()
+    turtle.left(90)
+    turtle.forward(length/2)
+    turtle.up()
+    turtle.back(length/2)
+    turtle.right(90)
+    turtle.down()
+    turtle.forward(length/2)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length/2)
+    turtle.back(2*length/2)
+    turtle.up()
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.left(90)
+
+def drawI(length):
+    """
+    Draw I.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
+    :return: None
+    """
+
+    turtle.down()
+    turtle.forward(length)
+    turtle.back(length/2)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length/2)
+    turtle.back(length)
+    turtle.up()
+    turtle.forward(length/2)
     turtle.right(90)
     turtle.forward(length)
     turtle.left(90)
-    turtle.up()
-def drawC(length):
-     """
-     Draw English character 'C'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
-     :return: None
-     """
+    turtle.forward(length/2)
 
-     turtle.down()
-     turtle.right(180)
-     turtle.forward(length)
-     turtle.right(90)
-     turtle.forward(length)
-     turtle.right(90)
-     turtle.forward(length)
-     turtle.up()
-     turtle.right(90)
-     turtle.forward(length)
-     turtle.left(90)
-     turtle.down()
-
-     #print("C: " + str(0)+"," + str(-length))
 def drawS(length):
     """
-    Draw English character 'S'
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+length,Y), heading (east), up
+    Draw S.
+    :pre: (relative) pos (0,0), heading (east), up
+    :post: (relative) pos (length,0), heading (east), up
+    :return: None
+    """
+
+    turtle.down()
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length/2)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length/2)
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.up()
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.left(90)
+
+def drawname(length):
+    """
+    Draw name.
+    :pre: (relative) pos (200,0), heading (east), up
+    :post: (relative) pos (200 + 11*length + 9*length/5 + length/2 ,0), heading (east), up
     :return: None
     """
     turtle.up()
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(90)
+    turtle.setpos(-320,0)
     turtle.down()
-    turtle.forward(length)
-    turtle.right(180)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length/2)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length/2)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.right(180)
-    turtle.forward(length)
-    turtle.up()
+    drawM(length)
+    space(length/5)
+    drawA(length)
+    space(length/5)
+    drawY(length)
+    space(length/5)
+    drawA(length)
+    space(length/5)
+    drawN(length)
+    space(length/5)
+    drawK(length)
+    space(length/2)
+    drawJ(length)
+    space(length/5)
+    drawA(length)
+    space(length/5)
+    drawI(length)
+    space(length/5)
+    drawN(length)
+    space(length/5)
+    drawS(length)
 
 def main():
     """
-    Call various function for drawing various English character and space between them.
-    :pre: (relative) pos (X,Y), heading (east), up
-    :post: (relative) pos (X+26/5*length+,Y), heading (east), up
+    The main function.
+    :pre: pos (0,0), heading (east), up
+    :post: (relative) pos (200 + 11*length + 9*length/5 + length/2 ,0), heading (east), up
     :return: None
-
     """
-    length = int(input('Enter the font size(for best fit on screen give 50): '))
-    init()
-    drawC(length)
-    drawSpace(length/5,0)
-    drawO(length)
-    drawSpace(length/5,0)
-    drawL(length)
-    drawSpace(length/5,0)
-    drawD(length)
-    drawSpace(length/5,0)
-    drawP(length)
-    drawSpace(length/5,0)
-    drawL(length)
-    drawSpace(length/5,0)
-    drawA(length)
-    drawSpace(length/5,0)
-    drawY(length)
-    drawSpace(length/5,0)
-    drawS(length)
-    turtle.hideturtle()
-    #drawO(length)
-    input('press enter to close...')
+    length = int(input('Enter your font size: '))
+    drawname(length)
+
+    input('hit enter to close')
 
 if __name__ == '__main__':
     main()
